@@ -3,6 +3,8 @@ from tkinter import *
 ventana = Tk()
 ventana.title("Calculadora")
 
+
+
 i = 0
 
 #entrada
@@ -14,11 +16,12 @@ def click_boton(valor):
     e_texto.insert(i, valor)
     i += 1
     
+    
 def borrar():
     e_texto.delete(0, END)
     i = 0
     
-def hacer_operacion():
+def realizar_operacion():
     ecuacion = e_texto.get()
     resultado = eval(ecuacion)
     e_texto.delete(0, END)
@@ -45,7 +48,7 @@ boton_div = Button(ventana, text="/", width=5, height=2, command= lambda: click_
 boton_mult = Button(ventana, text="*", width=5, height=2, command= lambda: click_boton("*"))
 boton1_sum = Button(ventana, text="+", width=5, height=2, command= lambda: click_boton("+"))
 boton1_rest = Button(ventana, text="-", width=5, height=2, command= lambda: click_boton("-"))
-boton_igual = Button(ventana, text="=", width=5, height=2, command= lambda: hacer_operacion())
+boton_igual = Button(ventana, text="=", width=5, height=2, command= lambda: realizar_operacion())
 
 #agregar botones en la pantalla
 boton_borrar.grid(row= 1, column= 0, padx= 5, pady=5)
